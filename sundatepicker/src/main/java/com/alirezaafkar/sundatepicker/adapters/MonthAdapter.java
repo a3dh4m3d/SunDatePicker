@@ -45,10 +45,11 @@ public class MonthAdapter extends RecyclerView.Adapter<MonthAdapter.ViewHolder> 
         }
     }
 
-    private boolean isSelected(int day) {
+	private boolean isSelected(int day) {
         return mCallback.getMonth() == mMonth &&
                 mCallback.getDay() == day &&
-                mCallback.getYear() == mYear;
+                mCallback.getYear() == mToday.getIranianYear();
+                //mCallback.getYear() == mYear;
     }
 
     private boolean isToday(int day) {
