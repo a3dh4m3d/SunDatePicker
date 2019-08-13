@@ -46,16 +46,33 @@ public class MonthFragment extends Fragment implements View.OnClickListener {
                 .inflate(R.layout.fragment_month, container, false);
     }
 
+    
     @Override
     public void onClick(View view) {
         int currentItem = mPager.getCurrentItem();
+        // Toast.makeText(getContext(),mPager.getCurrentItem()+" ",Toast.LENGTH_SHORT).show();
+
         if (view.getId() == R.id.next) {
             if (++currentItem < mAdapter.getCount()) {
                 mPager.setCurrentItem(currentItem, true);
+            } else{
+
+                mCallback.setYear(mCallback.getYear()+1);
+               // Toast.makeText(getContext(),mCallback.getYear()+"",Toast.LENGTH_SHORT).show();
+                mPager.setCurrentItem(0);
+                initPager(mCallback.getYear(), 0);
+
             }
         } else if (view.getId() == R.id.before) {
             if (--currentItem >= 0) {
                 mPager.setCurrentItem(currentItem, true);
+            }else{
+
+                mCallback.setYear(mCallback.getYear()-1);
+             //   Toast.makeText(getContext(),mCallback.getYear()+"",Toast.LENGTH_SHORT).show();
+                mPager.setCurrentItem(11);
+                initPager(mCallback.getYear(), 11);
+
             }
         }
     }
