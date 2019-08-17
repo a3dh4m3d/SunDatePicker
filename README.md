@@ -1,5 +1,9 @@
 # SunDatePicker
-Date picker for Iranian calendar 
+Date picker for Iranian calendar
+
+#Version 2.1.3
+add scrolling between years with months arrows
+
 
 ## Screenshots
 
@@ -15,7 +19,7 @@ Date picker for Iranian calendar
 
 ```
 dependencies {
-    compile 'com.alirezaafkar:sundatepicker:2.1.2'
+	        implementation 'com.github.a3dh4m3d:SunDatePicker:2.1.3'
 }
 ```
 
